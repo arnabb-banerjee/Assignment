@@ -1,0 +1,10 @@
+# Create and activate a virtual environment (recommended)
+python -m venv dinm_env
+source dinm_env/bin/activate  # Linux/Mac
+dinm_env\Scripts\activate     # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+
+python main.py

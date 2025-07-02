@@ -1,0 +1,7 @@
+# Visual Studio Community installer
+# download and run rustup‑init.exe
+
+torch==2.7.0
+transformers==4.50.3
+numpy
+matplotlib==3.10.3

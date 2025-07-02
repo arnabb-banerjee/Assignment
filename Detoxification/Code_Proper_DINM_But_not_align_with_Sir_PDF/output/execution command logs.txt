@@ -1,0 +1,49 @@
+(dinm_env) C:\Arnab\Detoxification>python main.py
+2025-06-27 07:12:39 - INFO - Starting main
+2025-06-27 07:12:39 - INFO - Starting detoxification pipeline
+2025-06-27 07:12:39 - INFO - Configuration: device=cpu, layer_index=6, train_samples=1000, eval_samples=100
+2025-06-27 07:12:39 - INFO - Starting initialize_model
+2025-06-27 07:12:39 - INFO - Initializing model...
+2025-06-27 07:12:43 - INFO - Model initialized successfully
+2025-06-27 07:12:43 - INFO - Completed initialize_model in 0:00:03.765120
+2025-06-27 07:12:43 - INFO - Starting prepare_datasets
+2025-06-27 07:12:43 - INFO - Loading datasets...
+README.md: 4.22kB [00:00, 1.90MB/s]
+C:\Arnab\Detoxification\dinm_env\Lib\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\Arnab Banerjee\.cache\huggingface\hub\datasets--allenai--real-toxicity-prompts. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-06-27 07:12:49 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+prompts.jsonl: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 67.7M/67.7M [00:17<00:00, 3.91MB/s]
+Generating train split: 100%|█████████████████████████████████████████████████████████████████████████████| 99442/99442 [00:00<00:00, 271670.65 examples/s]
+2025-06-27 07:13:07 - INFO - Successfully loaded RealToxicityPrompts dataset
+2025-06-27 07:13:07 - WARNING - 'toxicity' feature not found - using random sample
+2025-06-27 07:13:07 - INFO - Using random sample of 2000 toxic examples
+README.md: 10.5kB [00:00, 13.9MB/s]
+C:\Arnab\Detoxification\dinm_env\Lib\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\Arnab Banerjee\.cache\huggingface\hub\datasets--wikitext. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+test-00000-of-00001.parquet: 100%|██████████████████████████████████████████████████████████████████████████████████████| 722k/722k [00:00<00:00, 9.05MB/s]
+train-00000-of-00002.parquet: 100%|█████████████████████████████████████████████████████████████████████████████████████| 156M/156M [00:39<00:00, 3.91MB/s]
+train-00001-of-00002.parquet: 100%|█████████████████████████████████████████████████████████████████████████████████████| 156M/156M [00:39<00:00, 3.94MB/s]
+validation-00000-of-00001.parquet: 100%|████████████████████████████████████████████████████████████████████████████████| 655k/655k [00:00<00:00, 6.58MB/s]
+Generating test split: 100%|█████████████████████████████████████████████████████████████████████████████████| 4358/4358 [00:00<00:00, 40268.98 examples/s]
+Generating train split: 100%|█████████████████████████████████████████████████████████████████████████| 1801350/1801350 [00:03<00:00, 545402.81 examples/s]
+Generating validation split: 100%|██████████████████████████████████████████████████████████████████████████| 3760/3760 [00:00<00:00, 323240.55 examples/s]
+2025-06-27 07:14:51 - INFO - Successfully loaded WikiText dataset
+Filter: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 1801350/1801350 [00:19<00:00, 94800.73 examples/s]
+2025-06-27 07:15:10 - INFO - Filtered non-toxic dataset, remaining samples: 1043868
+2025-06-27 07:15:10 - INFO - Completed prepare_datasets in 0:02:26.376132
+2025-06-27 07:15:10 - ERROR - Error preparing data samples: 'text'
+2025-06-27 07:15:10 - ERROR - Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\main.py", line 280, in main
+    toxic_texts = [x['text'] for x in toxic_ds.shuffle().select(range(train_samples + eval_samples))]
+                   ~^^^^^^^^
+KeyError: 'text'
+
+2025-06-27 07:15:10 - INFO - Cleaning up resources...
+2025-06-27 07:15:10 - INFO - Program completed
+
+Program completed. Check detoxification.log for details.
+
+(dinm_env) C:\Arnab\Detoxification>

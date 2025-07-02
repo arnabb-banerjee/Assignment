@@ -1,0 +1,350 @@
+2025-05-31 01:35:21,818 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:35:21,818 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:35:26,097 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:35:26,097 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:35:26,098 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:35:26,098 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:35:26,100 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:35:26,100 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:35:26,106 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:35:26,106 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:35:26,108 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:35:26,108 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:35:26,110 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:35:26,110 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:35:26,111 - main - INFO - 
+=== Results ===
+2025-05-31 01:35:26,111 - main - INFO - 
+=== Results ===
+2025-05-31 01:35:26,115 - main - ERROR - Application failed: name 'hidden_activations' is not defined
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\main.py", line 32, in main
+    print(f"\nDetoxified hidden activations (shape: {hidden_activations.shape}):")
+                                                     ^^^^^^^^^^^^^^^^^^
+NameError: name 'hidden_activations' is not defined
+
+2025-05-31 01:35:26,115 - main - ERROR - Application failed: name 'hidden_activations' is not defined
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\main.py", line 32, in main
+    print(f"\nDetoxified hidden activations (shape: {hidden_activations.shape}):")
+                                                     ^^^^^^^^^^^^^^^^^^
+NameError: name 'hidden_activations' is not defined
+
+2025-05-31 01:36:41,878 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:36:41,878 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:36:44,330 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:36:44,330 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:36:44,330 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:36:44,330 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:36:44,331 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:36:44,331 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:36:44,456 - HiddenLayerCapture - ERROR - Hook function failed: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 80, in _hook_fn
+    detoxified = self.detoxifier.detoxify_hidden_layer(output[0])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'. Did you mean: 'deto0xify_hidden_layer'?
+
+2025-05-31 01:36:44,456 - HiddenLayerCapture - ERROR - Hook function failed: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 80, in _hook_fn
+    detoxified = self.detoxifier.detoxify_hidden_layer(output[0])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'. Did you mean: 'deto0xify_hidden_layer'?
+
+2025-05-31 01:36:44,657 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:36:44,657 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:36:44,659 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:36:44,659 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:36:44,660 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:36:44,660 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:36:44,661 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:36:44,661 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:36:44,662 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:36:44,662 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:36:44,662 - main - INFO - 
+=== Results ===
+2025-05-31 01:36:44,662 - main - INFO - 
+=== Results ===
+2025-05-31 01:36:44,663 - main - ERROR - Application failed: 'NoneType' object has no attribute 'shape'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\main.py", line 32, in main
+    print(f"\nDetoxified hidden activations (shape: {hidden_activations.shape}):")
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'shape'
+
+2025-05-31 01:36:44,663 - main - ERROR - Application failed: 'NoneType' object has no attribute 'shape'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\main.py", line 32, in main
+    print(f"\nDetoxified hidden activations (shape: {hidden_activations.shape}):")
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'shape'
+
+2025-05-31 01:37:46,444 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:37:46,444 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:37:49,217 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:37:49,217 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:37:49,218 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:37:49,218 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:37:49,219 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:37:49,219 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:37:49,307 - HiddenLayerCapture - ERROR - Hook function failed: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 80, in _hook_fn
+    detoxified = self.detoxifier.detoxify_hidden_layer(output[0])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'. Did you mean: 'deto0xify_hidden_layer'?
+
+2025-05-31 01:37:49,307 - HiddenLayerCapture - ERROR - Hook function failed: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 80, in _hook_fn
+    detoxified = self.detoxifier.detoxify_hidden_layer(output[0])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'. Did you mean: 'deto0xify_hidden_layer'?
+
+2025-05-31 01:37:49,514 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:37:49,514 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:37:49,516 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:37:49,516 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:37:49,517 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:37:49,517 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:37:49,519 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:37:49,519 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:37:49,519 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:37:49,519 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:37:49,519 - main - INFO - 
+=== Results ===
+2025-05-31 01:37:49,519 - main - INFO - 
+=== Results ===
+2025-05-31 01:37:49,519 - main - INFO - None
+2025-05-31 01:37:49,519 - main - INFO - None
+2025-05-31 01:37:49,520 - main - INFO - Original: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:37:49,520 - main - INFO - Original: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:37:49,520 - main - INFO - Detoxified: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:37:49,520 - main - INFO - Detoxified: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:40:05,162 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:40:05,162 - main - INFO - Starting processing for text: 'I love this beautiful day! But some people are just so stupid and ugly.'
+2025-05-31 01:40:07,173 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:40:07,173 - DINMDetoxifier - INFO - Initialized with dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:40:07,174 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:40:07,174 - HiddenLayerCapture - INFO - Initialized HiddenLayerCapture with model=gpt2, layer_index=6, dampening_factor=0.5, activation_threshold=0.5
+2025-05-31 01:40:07,174 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:40:07,174 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:40:07,279 - HiddenLayerCapture - ERROR - Hook function failed: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 80, in _hook_fn
+    detoxified = self.detoxifier.detoxify_hidden_layer(output[0])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'. Did you mean: 'deto0xify_hidden_layer'?
+
+2025-05-31 01:40:07,279 - HiddenLayerCapture - ERROR - Hook function failed: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 80, in _hook_fn
+    detoxified = self.detoxifier.detoxify_hidden_layer(output[0])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DINMDetoxifier' object has no attribute 'detoxify_hidden_layer'. Did you mean: 'deto0xify_hidden_layer'?
+
+2025-05-31 01:40:07,483 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:40:07,483 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:40:07,485 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:40:07,485 - HiddenLayerCapture - INFO - Registered hook on layer 6
+2025-05-31 01:40:07,485 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:40:07,485 - main - ERROR - Invalid tokenizer_output type: tokenizer_output must be of type dict, got BatchEncoding
+NoneType: None
+
+2025-05-31 01:40:07,488 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:40:07,488 - HiddenLayerCapture - ERROR - Error during text generation: tokenizer_output must be of type dict, got BatchEncoding
+Traceback (most recent call last):
+  File "C:\Arnab\Detoxification\HiddenLayerCapture.py", line 194, in get_text_results
+    inputs = ErrorHandler.validate_type(
+        self.tokenizer(input_text, return_tensors="pt", padding=True, truncation=True),
+        dict,
+        'tokenizer_output'
+    )
+  File "C:\Arnab\Detoxification\error.py", line 103, in validate_type
+    ErrorHandler.handle_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error,
+        ^^^^^^
+    ...<2 lines>...
+        custom_message=f"Invalid {param_name} type"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Arnab\Detoxification\error.py", line 38, in handle_error
+    raise error
+TypeError: tokenizer_output must be of type dict, got BatchEncoding
+
+2025-05-31 01:40:07,488 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:40:07,488 - HiddenLayerCapture - INFO - Successfully removed hook
+2025-05-31 01:40:07,488 - main - INFO - 
+=== Results ===
+2025-05-31 01:40:07,488 - main - INFO - 
+=== Results ===
+2025-05-31 01:40:07,488 - main - INFO - None
+2025-05-31 01:40:07,488 - main - INFO - None
+2025-05-31 01:40:07,489 - main - INFO - Original: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:40:07,489 - main - INFO - Original: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:40:07,489 - main - INFO - Detoxified: Error: tokenizer_output must be of type dict, got BatchEncoding
+2025-05-31 01:40:07,489 - main - INFO - Detoxified: Error: tokenizer_output must be of type dict, got BatchEncoding
